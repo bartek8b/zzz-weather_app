@@ -1,0 +1,9 @@
+body {
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  text-wrap: balance;
+}
+* {
+  transition: all 0.3s linear 0s;
+}
