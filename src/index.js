@@ -12,9 +12,24 @@ async function fetchData(location) {
     }
     const data = await response.json();
     console.log(data);
+    // Return Promise with filtered data
+    return {
+      address: data.resolvedAddress,
+      day: data.days[0].datetime,
+      icon: data.currentConditions.icon,
+      temperature: data.currentConditions.temp,
+      wind: data.currentConditions.windspeed,
+      sunrise: data.currentConditions.sunrise,
+      sunset: data.currentConditions.sunset,
+      future: data.days.slice(1, 8).map((day) => ({
+        day: day.datetime,
+        icon: day.icon,
+        temperature: day.temp,
+      })),
+    };
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
-fetchData('głowaczów');
+fetchData('ahlbeck').then((weather) => console.log(weather));
