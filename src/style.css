@@ -39,53 +39,54 @@ button {
   border: none;
   border-radius: calc(var(--gapBase) / 2);
 }
-input#location{
+input#location {
   width: calc(15rem + 0.2dvw);
 }
 button {
   cursor: pointer;
 }
-input#location:focus, button:focus, button:hover {
+input#location:focus,
+button:focus,
+button:hover {
   outline: 1px solid hsl(var(--mainColor));
 }
-main{
-
+main {
 }
-a{
+a {
   align-self: flex-end;
   padding-right: var(--gapBase);
   padding-bottom: var(--gapBase);
   color: hsl(var(--mainColor));
   text-decoration: none;
-  font-size: calc(.8rem + 0.2dvw);
+  font-size: calc(0.8rem + 0.2dvw);
   bottom: 0;
 }
 /* Unit toggle */
-.unit-toggle-container{
+.unit-toggle-container {
   display: flex;
   align-items: center;
   gap: calc(var(--gapBase));
 }
-.unit-toggle-btn{
+.unit-toggle-btn {
   background-color: hsl(var(--backgroundColor), 0.3);
-  height: calc(1.5rem + 0.2dvw);
-  width: calc(4rem + 0.2dvw);
+  height: 1.5rem;
+  width: 4rem;
   border-radius: 999rem;
   cursor: pointer;
   position: relative;
 }
-.unit-toggle-btn::before{
+.unit-toggle-btn::before {
   position: absolute;
   content: '';
   background-color: hsl(var(--mainColor), 0.7);
-  height: calc(1.5rem + 0.2dvw);
-  width: calc(1.5rem + 0.2dvw);
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 999rem;
   transition: all 0.2s linear 0s;
 }
-input#unit-toggle-box:checked + .unit-toggle-btn::before{
-  transform: translateX(calc(2.4rem + 0.2dvw));
+input#unit-toggle-box:checked + .unit-toggle-btn::before {
+  transform: translateX(2.5rem);
 }
-input#unit-toggle-box{
+input#unit-toggle-box {
   display: none;
 }
