@@ -9,12 +9,12 @@ body {
   gap: calc(var(--gapBase) * 2);
   min-height: 100dvh;
   color: hsl(var(--mainColor));
-  font-size: calc(1rem + 0.1dvw);
+  font-size: calc(1rem + 0.2dvw);
   background: url(assets/background.png) no-repeat center center fixed;
   background-size: cover;
 }
 * {
-  transition: all 0.3s linear 0s;
+  transition: all 0.2s linear 0s;
 }
 :root {
   --gapBase: 8px;
@@ -22,7 +22,7 @@ body {
   --backgroundColor: 0, 0%, 100%;
 }
 h1 {
-  font-size: calc(2rem + 0.1dvw);
+  font-size: calc(1.5rem + 0.2dvw);
   font-weight: bolder;
 }
 form {
@@ -33,16 +33,19 @@ form {
   gap: var(--gapBase);
   align-items: center;
 }
-input,
+input#location,
 button {
   padding: calc(var(--gapBase) / 2);
   border: none;
   border-radius: calc(var(--gapBase) / 2);
 }
+input#location{
+  width: calc(15rem + 0.2dvw);
+}
 button {
   cursor: pointer;
 }
-input:focus, button:focus, button:hover {
+input#location:focus, button:focus, button:hover {
   outline: 1px solid hsl(var(--mainColor));
 }
 main{
@@ -54,7 +57,35 @@ a{
   padding-bottom: var(--gapBase);
   color: hsl(var(--mainColor));
   text-decoration: none;
-  font-size: calc(.8rem + 0.1dvw);
+  font-size: calc(.8rem + 0.2dvw);
   bottom: 0;
 }
-
+/* Unit toggle */
+.unit-toggle-container{
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gapBase));
+}
+.unit-toggle-btn{
+  background-color: hsl(var(--backgroundColor), 0.3);
+  height: calc(1.5rem + 0.2dvw);
+  width: calc(4rem + 0.2dvw);
+  border-radius: 999rem;
+  cursor: pointer;
+  position: relative;
+}
+.unit-toggle-btn::before{
+  position: absolute;
+  content: '';
+  background-color: hsl(var(--mainColor), 0.7);
+  height: calc(1.5rem + 0.2dvw);
+  width: calc(1.5rem + 0.2dvw);
+  border-radius: 999rem;
+  transition: all 0.2s linear 0s;
+}
+input#unit-toggle-box:checked + .unit-toggle-btn::before{
+  transform: translateX(calc(2.4rem + 0.2dvw));
+}
+input#unit-toggle-box{
+  display: none;
+}
