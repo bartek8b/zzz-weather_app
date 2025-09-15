@@ -28,6 +28,7 @@ body::selection {
 h1 {
   font-size: calc(1.5rem + 0.2dvw);
   font-weight: bolder;
+  margin-bottom: 0;
 }
 form {
   padding: calc(var(--gapBase) * 2);
@@ -68,13 +69,17 @@ a {
 /* Unit toggle */
 .toggles-container {
   display: flex;
-  gap: calc(var(--gapBase) * 10);
+  gap: calc(var(--gapBase) * 3);
 }
 .temp-unit-toggle-container,
 .wind-unit-toggle-container {
   display: flex;
   align-items: center;
   gap: calc(var(--gapBase));
+}
+.temp-unit-toggle-container {
+  border-right: 1px solid hsl(var(--mainColor));
+  padding-right: calc(var(--gapBase) * 3);
 }
 .temp-unit-toggle-btn,
 .wind-unit-toggle-btn {
