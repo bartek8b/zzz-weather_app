@@ -21,7 +21,7 @@ export async function fetchData(location) {
       temperature: data.currentConditions.temp,
       wind: data.currentConditions.windspeed,
       //Future forecast
-      future: data.days.slice(1, 8).map((day) => ({
+      future: data.days.slice(1, 7).map((day) => ({
         day: day.datetime,
         icon: day.icon,
         temperature: day.temp,
