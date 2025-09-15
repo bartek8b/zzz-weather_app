@@ -14,14 +14,19 @@ export async function fetchData(location) {
       address: data.resolvedAddress,
       day: data.days[0].datetime,
       icon: data.currentConditions.icon,
-      temperature: data.currentConditions.temp,
-      wind: data.currentConditions.windspeed,
+      humidity: data.currentConditions.humidity,
+      pressure: data.currentConditions.pressure,
       sunrise: data.currentConditions.sunrise,
       sunset: data.currentConditions.sunset,
+      temperature: data.currentConditions.temp,
+      wind: data.currentConditions.windspeed,
+      //Future forecast
       future: data.days.slice(1, 8).map((day) => ({
         day: day.datetime,
         icon: day.icon,
         temperature: day.temp,
+        pressure: day.pressure,
+        wind: day.windspeed,
       })),
     };
   } catch (error) {
