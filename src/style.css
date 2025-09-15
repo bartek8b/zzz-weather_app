@@ -12,6 +12,10 @@ body {
   font-size: calc(1rem + 0.2dvw);
   background: url(assets/background.png) no-repeat center center fixed;
   background-size: cover;
+  cursor: default;
+}
+body::selection{
+  background-color: transparent;
 }
 * {
   transition: all 0.2s linear 0s;
