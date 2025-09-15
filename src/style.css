@@ -14,7 +14,7 @@ body {
   background-size: cover;
   cursor: default;
 }
-body::selection{
+body::selection {
   background-color: transparent;
 }
 * {
@@ -66,12 +66,18 @@ a {
   bottom: 0;
 }
 /* Unit toggle */
-.unit-toggle-container {
+.toggles-container {
+  display: flex;
+  gap: calc(var(--gapBase) * 10);
+}
+.temp-unit-toggle-container,
+.wind-unit-toggle-container {
   display: flex;
   align-items: center;
   gap: calc(var(--gapBase));
 }
-.unit-toggle-btn {
+.temp-unit-toggle-btn,
+.wind-unit-toggle-btn {
   background-color: hsl(var(--backgroundColor), 0.3);
   height: 1.5rem;
   width: 4rem;
@@ -79,7 +85,8 @@ a {
   cursor: pointer;
   position: relative;
 }
-.unit-toggle-btn::before {
+.temp-unit-toggle-btn::before,
+.wind-unit-toggle-btn::before {
   position: absolute;
   content: '';
   background-color: hsl(var(--mainColor), 0.7);
@@ -88,9 +95,11 @@ a {
   border-radius: 999rem;
   transition: all 0.2s linear 0s;
 }
-input#unit-toggle-box:checked + .unit-toggle-btn::before {
+input#temp-unit-toggle-box:checked + .temp-unit-toggle-btn::before,
+input#wind-unit-toggle-box:checked + .wind-unit-toggle-btn::before {
   transform: translateX(2.5rem);
 }
-input#unit-toggle-box {
+input#temp-unit-toggle-box,
+input#wind-unit-toggle-box {
   display: none;
 }
