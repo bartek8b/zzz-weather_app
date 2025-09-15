@@ -29,6 +29,7 @@ h1 {
   font-size: calc(1.5rem + 0.2dvw);
   font-weight: bolder;
   margin-bottom: 0;
+  text-shadow: 1px 1px 5px hsl(var(--backgroundColor), 0.3);
 }
 form {
   padding: calc(var(--gapBase) * 2);
@@ -37,6 +38,7 @@ form {
   display: flex;
   gap: var(--gapBase);
   align-items: center;
+  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
 }
 input#location,
 button {
@@ -54,8 +56,6 @@ input#location:focus,
 button:focus,
 button:hover {
   outline: 1px solid hsl(var(--mainColor));
-}
-main {
 }
 a {
   align-self: flex-end;
@@ -89,6 +89,7 @@ a {
   border-radius: 999rem;
   cursor: pointer;
   position: relative;
+  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
 }
 .temp-unit-toggle-btn::before,
 .wind-unit-toggle-btn::before {
@@ -107,4 +108,68 @@ input#wind-unit-toggle-box:checked + .wind-unit-toggle-btn::before {
 input#temp-unit-toggle-box,
 input#wind-unit-toggle-box {
   display: none;
+}
+/* Main forecast grid */
+main {
+  padding-top: calc(var(--gapBase) * 4);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 2fr repeat(2, 3fr) repeat(2, 2fr);
+  gap: var(--gapBase);
+  grid-template-areas:
+    'address address address address address address'
+    'address address address address address address'
+    'icon icon icon date-0 date-0 date-0'
+    'icon icon icon date-0 date-0 date-0'
+    'icon icon icon conditions conditions conditions'
+    'day-lenght day-lenght day-lenght conditions conditions conditions'
+    'day-lenght day-lenght day-lenght conditions conditions conditions'
+    'day-lenght day-lenght day-lenght conditions conditions conditions'
+    'date-1 date-1 date-2 date-2 date-3 date-3'
+    'date-1 date-1 date-2 date-2 date-3 date-3'
+    'date-4 date-4 date-5 date-5 date-6 date-6'
+    'date-4 date-4 date-5 date-5 date-6 date-6';
+}
+main > div {
+  padding: calc(var(--gapBase) * 2);
+  border-radius: var(--gapBase);
+  background-color: hsl(var(--backgroundColor), 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
+}
+.address {
+  grid-area: address;
+}
+.icon {
+  grid-area: icon;
+}
+.date-0 {
+  grid-area: date-0;
+}
+.day-lenght {
+  grid-area: day-lenght;
+}
+.conditions {
+  grid-area: conditions;
+}
+.date-1 {
+  grid-area: date-1;
+}
+.date-2 {
+  grid-area: date-2;
+}
+.date-3 {
+  grid-area: date-3;
+}
+.date-4 {
+  grid-area: date-4;
+}
+.date-5 {
+  grid-area: date-5;
+}
+.date-6 {
+  grid-area: date-6;
 }
