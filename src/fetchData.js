@@ -1,9 +1,9 @@
 export async function fetchData(location) {
   const apiKey = 'YXSUVQ3DB4TJWPLWYEPNXTRC2';
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?iconSet=icons2&unitGroup=metric&key=${apiKey}`;
+
   try {
-    const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?iconSet=icons2&key=${apiKey}`,
-    );
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Could not fetch data');
     }
