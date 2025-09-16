@@ -131,7 +131,7 @@ main {
     'date-4 date-4 date-5 date-5 date-6 date-6';
 }
 main > div {
-  padding: calc(var(--gapBase) * 2);
+  padding: var(--gapBase);
   border-radius: var(--gapBase);
   background-color: hsl(var(--backgroundColor), 0.3);
   display: flex;
@@ -142,34 +142,45 @@ main > div {
 }
 .address {
   grid-area: address;
+  aspect-ratio: 3 / 1;
 }
 .icon {
   grid-area: icon;
+  aspect-ratio: 1 / 1;
 }
 .date-0 {
   grid-area: date-0;
+  aspect-ratio: 3 / 2;
 }
 .day-lenght {
   grid-area: day-lenght;
+  aspect-ratio: 1 / 1;
 }
 .conditions {
   grid-area: conditions;
+  aspect-ratio: 3 / 4;
 }
 .date-1 {
   grid-area: date-1;
+  aspect-ratio: 1 / 1;
 }
 .date-2 {
   grid-area: date-2;
+  aspect-ratio: 1 / 1;
 }
 .date-3 {
   grid-area: date-3;
+  aspect-ratio: 1 / 1;
 }
 .date-4 {
   grid-area: date-4;
+  aspect-ratio: 1 / 1;
 }
 .date-5 {
   grid-area: date-5;
+  aspect-ratio: 1 / 1;
 }
 .date-6 {
   grid-area: date-6;
+  aspect-ratio: 1 / 1;
 }
