@@ -1,5 +1,5 @@
 import './modern-normalize.css';
 import './style.css';
-import { fetchData } from './fetchData';
+import { setListeners } from './eventListeners';
 
-fetchData('syndey').then((weather) => console.log(weather));
+setListeners();
