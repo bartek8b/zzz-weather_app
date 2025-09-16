@@ -113,8 +113,6 @@ input#wind-unit-toggle-box {
 main {
   padding-top: calc(var(--gapBase) * 4);
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 2fr repeat(2, 3fr) repeat(2, 2fr);
   gap: var(--gapBase);
   grid-template-areas:
     'address address address address address address'
