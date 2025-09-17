@@ -17,9 +17,6 @@ body {
 body::selection {
   background-color: transparent;
 }
-* {
-  transition: all 0.2s linear 0s;
-}
 :root {
   --gapBase: 8px;
   --mainColor: 0, 0%, 10%;
