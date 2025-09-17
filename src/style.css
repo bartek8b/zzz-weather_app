@@ -36,9 +36,11 @@ form {
   border-radius: var(--gapBase);
   background-color: hsl(var(--backgroundColor), 0.3);
   display: flex;
+  justify-content: center;
   gap: var(--gapBase);
   align-items: center;
   box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
+  width: min(500px, 75dvw);
 }
 input#location,
 button {
