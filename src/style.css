@@ -115,21 +115,23 @@ input#wind-unit-toggle-box {
 }
 /* Main forecast grid */
 main {
+  width: min(600px, 85dvw);
   padding-top: calc(var(--gapBase) * 4);
   display: grid;
   gap: var(--gapBase);
   grid-template-areas:
     'address address address address address address'
-    'address address address address address address'
+    '. . . . . .'
+    '. . . . . .'
     'icon icon icon date-0 date-0 date-0'
-    'icon icon icon date-0 date-0 date-0'
+    'icon icon icon conditions conditions conditions'
     'icon icon icon conditions conditions conditions'
     'day-lenght day-lenght day-lenght conditions conditions conditions'
     'day-lenght day-lenght day-lenght conditions conditions conditions'
     'day-lenght day-lenght day-lenght conditions conditions conditions'
+    '. . . . . .'
+    '. . . . . .'
     'date-1 date-1 date-2 date-2 date-3 date-3'
-    'date-1 date-1 date-2 date-2 date-3 date-3'
-    'date-4 date-4 date-5 date-5 date-6 date-6'
     'date-4 date-4 date-5 date-5 date-6 date-6';
 }
 main > div {
@@ -144,7 +146,7 @@ main > div {
 }
 .address {
   grid-area: address;
-  aspect-ratio: 3 / 1;
+  aspect-ratio: 5 / 1;
 }
 .icon {
   grid-area: icon;
