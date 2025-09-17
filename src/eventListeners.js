@@ -1,5 +1,5 @@
 import { fetchData } from './fetchData';
-import { clearItems, appendLoader } from './appendInfo';
+import { clearItems, appendLoader, appendErrorInfo } from './appendInfo';
 
 const form = document.getElementById('form');
 const locationInput = document.getElementById('location');
@@ -24,7 +24,7 @@ async function getWeather(e) {
     locationInput.value = '';
   } catch (error) {
     clearItems();
-    // Here goes showError()
+    appendErrorInfo();
     console.error(error);
   }
 }
