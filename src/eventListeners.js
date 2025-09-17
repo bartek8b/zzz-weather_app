@@ -1,15 +1,24 @@
 import { fetchData } from './fetchData';
 
+const form = document.getElementById('form');
 const locationInput = document.getElementById('location');
 const searchBtn = document.getElementById('search-btn');
 
 async function getWeather(e) {
   e.preventDefault();
+
+  const userInput = locationInput.value;
+
+  if (!form.reportValidity()) {
+    return;
+  }
+
   try {
     // Here goes showLoader()
-    const weather = await fetchData(locationInput.value);
+    const weather = await fetchData(userInput);
     console.log(weather);
     // Here goes hideLoader() & appendForecast()
+    locationInput.value = '';
   } catch (error) {
     // Here goes hideLoader() & showError()
     console.error(error);
