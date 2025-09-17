@@ -22,7 +22,7 @@ body::selection {
 }
 :root {
   --gapBase: 8px;
-  --mainColor: 0, 0%, 15%;
+  --mainColor: 0, 0%, 10%;
   --backgroundColor: 0, 0%, 100%;
 }
 h1 {
