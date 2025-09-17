@@ -39,8 +39,7 @@ form {
   justify-content: center;
   gap: var(--gapBase);
   align-items: center;
-  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
-  width: min(500px, 75dvw);
+  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);  
 }
 input#location,
 button {
@@ -53,7 +52,7 @@ input#location::selection {
   color: hsl(var(--backgroundColor));
 }
 input#location {
-  width: calc(15rem + 0.2dvw);
+  width: min(350px, 50dvw);
 }
 button {
   cursor: pointer;
