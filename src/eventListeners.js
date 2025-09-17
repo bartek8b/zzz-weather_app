@@ -1,5 +1,5 @@
 import { fetchData } from './fetchData';
-import { clearItems } from './appendInfo';
+import { clearItems, appendLoader } from './appendInfo';
 
 const form = document.getElementById('form');
 const locationInput = document.getElementById('location');
@@ -15,7 +15,8 @@ async function getWeather(e) {
   }
 
   try {
-    // Here goes showLoader()
+    clearItems();
+    appendLoader();
     const weather = await fetchData(userInput);
     console.log(weather);
     clearItems();

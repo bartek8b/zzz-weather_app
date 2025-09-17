@@ -190,3 +190,15 @@ main > div {
   grid-area: date-6;
   aspect-ratio: 1 / 1;
 }
+/* Spinner */
+.spin{
+  animation: spinner 3s linear infinite;
+}
+@keyframes spinner{
+  from{
+    transform: rotateZ(360deg);
+  }
+  to{
+    transform: rotateZ(0deg);
+  }
+}
