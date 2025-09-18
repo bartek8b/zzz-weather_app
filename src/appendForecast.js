@@ -18,6 +18,13 @@ async function address(data, div) {
   div.appendChild(document.createElement('br'));
 
   const span = document.createElement('span');
-  span.textContent = data.address;
+  span.textContent = capitalizeAddress(data.address);
   div.appendChild(span);
+}
+
+function capitalizeAddress(address) {
+  return address
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
