@@ -28,7 +28,7 @@ body::selection {
 }
 h1 {
   font-family: 'mckloud', sans-serif;
-  font-size: calc(3rem + 0.2dvw);
+  font-size: calc(2rem + 0.2dvw);
   font-weight: bolder;
   margin-bottom: 0;
   text-shadow: 1px 1px 5px hsl(var(--backgroundColor), 0.3);
@@ -41,7 +41,7 @@ form {
   justify-content: center;
   gap: var(--gapBase);
   align-items: center;
-  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);  
+  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
 }
 input#location,
 button {
@@ -121,23 +121,22 @@ main {
   padding-top: calc(var(--gapBase) * 4);
   display: grid;
   gap: var(--gapBase);
+  grid-template-columns: repeat(6, minmax(50px, 1fr));
   grid-template-areas:
     'address address address address address address'
-    '. . . . . .'
     '. . . . . .'
     'icon icon icon date-0 date-0 date-0'
     'icon icon icon conditions conditions conditions'
     'icon icon icon conditions conditions conditions'
-    'day-lenght day-lenght day-lenght conditions conditions conditions'
-    'day-lenght day-lenght day-lenght conditions conditions conditions'
-    'day-lenght day-lenght day-lenght conditions conditions conditions'
-    '. . . . . .'
+    'day-length day-length day-length conditions conditions conditions'
+    'day-length day-length day-length conditions conditions conditions'
+    'day-length day-length day-length conditions conditions conditions'
     '. . . . . .'
     'date-1 date-1 date-2 date-2 date-3 date-3'
     'date-4 date-4 date-5 date-5 date-6 date-6';
 }
 main > div {
-  padding: var(--gapBase);
+  padding: calc(var(--gapBase) * 2);
   border-radius: var(--gapBase);
   background-color: hsl(var(--backgroundColor), 0.3);
   display: flex;
@@ -145,7 +144,7 @@ main > div {
   justify-content: center;
   text-align: center;
   align-items: center;
-  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);  
+  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
 }
 .address {
   grid-area: address;
@@ -159,8 +158,8 @@ main > div {
   grid-area: date-0;
   aspect-ratio: 3 / 2;
 }
-.day-lenght {
-  grid-area: day-lenght;
+.day-length {
+  grid-area: day-length;
   aspect-ratio: 1 / 1;
 }
 .conditions {
@@ -192,14 +191,14 @@ main > div {
   aspect-ratio: 1 / 1;
 }
 /* Spinner */
-.spin{
+.spin {
   animation: spinner 3s linear infinite;
 }
-@keyframes spinner{
-  from{
+@keyframes spinner {
+  from {
     transform: rotateZ(360deg);
   }
-  to{
+  to {
     transform: rotateZ(0deg);
   }
 }

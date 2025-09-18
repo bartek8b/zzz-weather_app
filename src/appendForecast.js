@@ -15,7 +15,7 @@ async function address(data, div) {
   icon.src = src.default;
   div.appendChild(icon);
 
-//   div.appendChild(document.createElement('br'));
+  div.appendChild(document.createElement('br'));
 
   const span = document.createElement('span');
   span.textContent = capitalizeAddress(data.address);
