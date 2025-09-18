@@ -144,8 +144,9 @@ main > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
-  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
+  box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);  
 }
 .address {
   grid-area: address;
