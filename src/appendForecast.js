@@ -5,6 +5,9 @@ export function appendForecast(data) {
     if (div.classList.contains('address')) {
       address(data, div);
     }
+    if (div.classList.contains('icon')) {
+      weatherIcon(data, div);
+    }
   });
 }
 
@@ -27,4 +30,16 @@ function capitalizeAddress(address) {
     .split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
+}
+
+async function weatherIcon(data, div) {
+  const icon = data.icon;
+  const src = await import(`./assets/weather_icons/${icon}.svg`);
+
+  const img = document.createElement('img');
+  img.alt = icon;
+  img.src = src.default;
+  img.style.width = '70%';
+
+  div.appendChild(img);
 }

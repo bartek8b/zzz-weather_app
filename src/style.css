@@ -26,6 +26,9 @@ body::selection {
   font-family: 'mckloud';
   src: url(assets/mckloud.ttf);
 }
+img{
+  filter: invert(10%);
+}
 h1 {
   font-family: 'mckloud', sans-serif;
   font-size: calc(2rem + 0.2dvw);
