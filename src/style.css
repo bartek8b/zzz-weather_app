@@ -22,8 +22,13 @@ body::selection {
   --mainColor: 0, 0%, 10%;
   --backgroundColor: 0, 0%, 100%;
 }
+@font-face {
+  font-family: 'mckloud';
+  src: url(assets/mckloud.ttf);
+}
 h1 {
-  font-size: calc(1.5rem + 0.2dvw);
+  font-family: 'mckloud';
+  font-size: calc(3rem + 0.2dvw);
   font-weight: bolder;
   margin-bottom: 0;
   text-shadow: 1px 1px 5px hsl(var(--backgroundColor), 0.3);
