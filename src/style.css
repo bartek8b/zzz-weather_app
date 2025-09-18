@@ -71,7 +71,6 @@ a {
   color: hsl(var(--mainColor));
   text-decoration: none;
   font-size: calc(0.8rem + 0.2dvw);
-  bottom: 0;
 }
 /* Unit toggle */
 .toggles-container {
