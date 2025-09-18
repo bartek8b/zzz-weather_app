@@ -1,4 +1,4 @@
-import './modern-normalize.css';
+import './modern-normalize.min.css';
 import './style.css';
 import { setListeners } from './eventListeners';
 
