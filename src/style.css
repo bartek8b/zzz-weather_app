@@ -27,7 +27,7 @@ body::selection {
   src: url(assets/mckloud.ttf);
 }
 h1 {
-  font-family: 'mckloud';
+  font-family: 'mckloud', sans-serif;
   font-size: calc(3rem + 0.2dvw);
   font-weight: bolder;
   margin-bottom: 0;

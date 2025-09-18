@@ -29,7 +29,7 @@ async function getWeather(e) {
   }
 }
 
-export function setListeners() {
+export function searchListeners() {
   searchBtn.addEventListener('click', getWeather);
 
   locationInput.addEventListener('keydown', (e) => {
