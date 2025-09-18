@@ -148,7 +148,7 @@ main > div {
 }
 .address {
   grid-area: address;
-  aspect-ratio: 5 / 1;
+  aspect-ratio: 3 / 1;
 }
 .icon {
   grid-area: icon;
