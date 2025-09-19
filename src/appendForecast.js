@@ -189,7 +189,7 @@ async function conditions(data, div) {
   humidityIcon.src = humidityIconScr.default;
   humiditySpan.appendChild(humidityIcon);
   humiditySpan.appendChild(document.createElement('br'));
-  humiditySpan.appendChild(document.createTextNode(`${data.humidity}%`));
+  humiditySpan.appendChild(document.createTextNode(`${Math.round(data.humidity)}%`));
 
   div.appendChild(document.createElement('br'));
 
