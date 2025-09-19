@@ -127,5 +127,5 @@ function getMinutes(time) {
 }
 
 function getDayLength(minutes) {
-  return `${Math.floor(minutes / 60)}:${(minutes % 60).toString().padStart(2, '0')}`;
+  return `${Math.floor(minutes / 60).toString().padStart(2, '0')}:${(minutes % 60).toString().padStart(2, '0')}`;
 }
