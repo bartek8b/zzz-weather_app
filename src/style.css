@@ -149,10 +149,6 @@ main > div {
   align-items: center;
   box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
 }
-main > div > span {
-  
-  /* width: 100%; */
-}
 .address {
   grid-area: address;
   aspect-ratio: 3 / 1;
