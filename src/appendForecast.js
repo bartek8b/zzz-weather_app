@@ -11,6 +11,9 @@ export function appendForecast(data) {
     if (div.classList.contains('date-0')) {
       date(data, div);
     }
+    if (div.classList.contains('day-length')) {
+      dayLength(data, div);
+    }
   });
 }
 
@@ -81,4 +84,29 @@ function getDateAndDay(dateString, div) {
   const daySpan = document.createElement('span');
   daySpan.textContent = day;
   div.appendChild(daySpan);
+}
+
+async function dayLength(data, div) {
+  const sunrise = data.sunrise.split(':').slice(0, 2).join(':');
+  const sunset = data.sunset.split(':').slice(0, 2).join(':');
+
+  const sunriseSpan = document.createElement('span');
+  const sunriseIcon = document.createElement('img');
+  sunriseIcon.alt = 'sunrise';
+  const sunriseIconSrc = await import('./assets/info_icons/sunrise.svg');
+  sunriseIcon.src = sunriseIconSrc.default;
+  sunriseSpan.appendChild(sunriseIcon);
+  sunriseSpan.appendChild(document.createTextNode(' ' + sunrise));
+  div.appendChild(sunriseSpan);
+
+  div.appendChild(document.createElement('br'));
+
+  const sunsetSpan = document.createElement('span');
+  const sunsetIcon = document.createElement('img');
+  sunsetIcon.alt = 'sunset';
+  const sunsetIconSrc = await import('./assets/info_icons/sunset.svg');
+  sunsetIcon.src = sunsetIconSrc.default;
+  sunsetSpan.appendChild(sunsetIcon);
+  sunsetSpan.appendChild(document.createTextNode(' ' + sunset));
+  div.appendChild(sunsetSpan);
 }
