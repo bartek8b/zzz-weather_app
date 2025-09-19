@@ -129,8 +129,7 @@ main {
     'address address address address address address'
     '. . . . . .'
     'icon icon icon date-0 date-0 date-0'
-    'icon icon icon conditions conditions conditions'
-    'icon icon icon conditions conditions conditions'
+    'icon icon icon date-0 date-0 date-0'
     'day-length day-length day-length conditions conditions conditions'
     'day-length day-length day-length conditions conditions conditions'
     'day-length day-length day-length conditions conditions conditions'
@@ -159,15 +158,15 @@ main > div {
 }
 .date-0 {
   grid-area: date-0;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1 / 1;
 }
 .day-length {
   grid-area: day-length;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 5;
 }
 .conditions {
   grid-area: conditions;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 5;
 }
 .date-1 {
   grid-area: date-1;

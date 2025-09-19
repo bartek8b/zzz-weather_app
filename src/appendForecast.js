@@ -116,6 +116,7 @@ async function dayLength(data, div) {
   div.appendChild(sunsetSpan);
 
   div.appendChild(document.createElement('br'));
+  div.appendChild(document.createElement('br'));
 
   const dayLength = getDayLength(getMinutes(sunset) - getMinutes(sunrise));
 
@@ -189,7 +190,9 @@ async function conditions(data, div) {
   humidityIcon.src = humidityIconScr.default;
   humiditySpan.appendChild(humidityIcon);
   humiditySpan.appendChild(document.createElement('br'));
-  humiditySpan.appendChild(document.createTextNode(`${Math.round(data.humidity)}%`));
+  humiditySpan.appendChild(
+    document.createTextNode(`${Math.round(data.humidity)}%`),
+  );
 
   div.appendChild(document.createElement('br'));
 
