@@ -96,6 +96,7 @@ async function dayLength(data, div) {
   const sunriseIconSrc = await import('./assets/info_icons/sunrise.svg');
   sunriseIcon.src = sunriseIconSrc.default;
   sunriseSpan.appendChild(sunriseIcon);
+  sunriseSpan.appendChild(document.createElement('br'));
   sunriseSpan.appendChild(document.createTextNode(' ' + sunrise));
   div.appendChild(sunriseSpan);
 
@@ -107,10 +108,10 @@ async function dayLength(data, div) {
   const sunsetIconSrc = await import('./assets/info_icons/sunset.svg');
   sunsetIcon.src = sunsetIconSrc.default;
   sunsetSpan.appendChild(sunsetIcon);
+  sunsetSpan.appendChild(document.createElement('br'));
   sunsetSpan.appendChild(document.createTextNode(' ' + sunset));
   div.appendChild(sunsetSpan);
 
-  div.appendChild(document.createElement('br'));
   div.appendChild(document.createElement('br'));
 
   const dayLength = getDayLength(getMinutes(sunset) - getMinutes(sunrise));
@@ -129,3 +130,4 @@ function getMinutes(time) {
 function getDayLength(minutes) {
   return `${Math.floor(minutes / 60).toString().padStart(2, '0')}:${(minutes % 60).toString().padStart(2, '0')}`;
 }
+
