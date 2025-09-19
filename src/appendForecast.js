@@ -109,4 +109,23 @@ async function dayLength(data, div) {
   sunsetSpan.appendChild(sunsetIcon);
   sunsetSpan.appendChild(document.createTextNode(' ' + sunset));
   div.appendChild(sunsetSpan);
+
+  div.appendChild(document.createElement('br'));
+  div.appendChild(document.createElement('br'));
+
+  const dayLength = getDayLength(getMinutes(sunset) - getMinutes(sunrise));
+
+  const dayLengthSpan = document.createElement('span');
+  dayLengthSpan.textContent = `Day lenght: ${dayLength}`;
+  div.appendChild(dayLengthSpan);
+}
+
+function getMinutes(time) {
+  const array = time.split(':');
+  const minutes = Number(array[0]) * 60 + Number(array[1]);
+  return minutes;
+}
+
+function getDayLength(minutes) {
+  return `${Math.floor(minutes / 60)}:${(minutes % 60).toString().padStart(2, '0')}`;
 }
