@@ -28,7 +28,6 @@ export async function fetchData(location) {
       day: day.datetime,
       icon: day.icon,
       temperature: day.temp,
-      pressure: day.pressure,
       wind: day.windspeed,
     })),
   };
