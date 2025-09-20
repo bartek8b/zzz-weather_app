@@ -132,7 +132,7 @@ async function dayLength(data, div) {
   const dayLength = getDayLength(getMinutes(sunset) - getMinutes(sunrise));
 
   const dayLengthSpan = document.createElement('span');
-  dayLengthSpan.textContent = `Day lenght: ${dayLength}`;
+  dayLengthSpan.textContent = `Day length: ${dayLength}`;
   div.appendChild(dayLengthSpan);
 }
 
