@@ -295,18 +295,18 @@ async function future(futureData, div, index) {
 
   // Checking toggle state
   if (!tempUnitToggle.checked) {
-    tempValue.textContent = ' ' + Math.round(futureData[index].temperature);
-    tempUnit.textContent = ' °C';
+    tempValue.textContent = Math.round(futureData[index].temperature);
+    tempUnit.textContent = '°C';
   } else if (tempUnitToggle.checked) {
-    tempValue.textContent = ' ' + Math.round((futureData[index].temperature * 9) / 5 + 32);
-    tempUnit.textContent = ' °F';
+    tempValue.textContent = Math.round((futureData[index].temperature * 9) / 5 + 32);
+    tempUnit.textContent = '°F';
   }
 
   if (!windUnitToggle.checked) {
-    windValue.textContent = ' ' + Math.round(futureData[index].wind);
-    windUnit.textContent = ' km/h';
+    windValue.textContent = Math.round(futureData[index].wind);
+    windUnit.textContent = 'km/h';
   } else if (windUnitToggle.checked) {
-    windValue.textContent = ' ' + Math.round(futureData[index].wind * 0.621371);
-    windUnit.textContent = ' mph';
+    windValue.textContent = Math.round(futureData[index].wind * 0.621371);
+    windUnit.textContent = 'mph';
   }
 }

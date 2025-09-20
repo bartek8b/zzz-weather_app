@@ -160,6 +160,11 @@ main > div {
   align-items: center;
   box-shadow: 1px 1px 5px hsl(var(--mainColor), 0.7);
 }
+main > div.future > span{
+  display: flex;
+  align-items: center;
+  gap: calc(var(--gapBase) / 2);
+}
 .address {
   grid-area: address;
   aspect-ratio: 3 / 1;
