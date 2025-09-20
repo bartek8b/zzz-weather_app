@@ -16,6 +16,13 @@ export function appendForecast(data) {
     }
     if (div.classList.contains('conditions')) {
       conditions(data, div);
+    } else {
+      for (let i = 1; i <= 6; i++) {
+        if (div.classList.contains(`date-${i}`)) {
+          const index = i - 1;
+          future(data.future, div, index);
+        }
+      }
     }
   });
 }
@@ -223,4 +230,37 @@ async function conditions(data, div) {
     windValue.textContent = Math.round(data.wind * 0.621371);
     windUnit.textContent = ' mph';
   }
+}
+
+async function future(futureData, div, index) {
+  // Get data from weather.future array
+  const date = new Date(futureData[index].day);
+  const days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  const day = days[date.getDay()];
+  const daySpan = document.createElement('span');
+  daySpan.textContent = day;
+  div.appendChild(daySpan);
+
+  div.appendChild(document.createElement('br'));
+  div.appendChild(document.createElement('br'));
+
+  const icon = futureData[index].icon;
+  const src = await import(`./assets/weather_icons/${icon}.svg`);
+  const img = document.createElement('img');
+  img.style.width = '30%';
+  img.alt = icon;
+  img.src = src.default;
+  div.appendChild(img);
+
+  div.appendChild(document.createElement('br'));
+
+  
 }

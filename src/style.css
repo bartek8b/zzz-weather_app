@@ -128,14 +128,21 @@ main {
   grid-template-areas:
     'address address address address address address'
     '. . . . . .'
+    '. . . . . .'
+    '. . . . . .'
+    '. . . . . .'
     'icon icon icon date-0 date-0 date-0'
     'icon icon icon date-0 date-0 date-0'
     'day-length day-length day-length conditions conditions conditions'
     'day-length day-length day-length conditions conditions conditions'
     'day-length day-length day-length conditions conditions conditions'
     '. . . . . .'
-    'date-1 date-1 date-2 date-2 date-3 date-3'
-    'date-4 date-4 date-5 date-5 date-6 date-6';
+    '. . . . . .'
+    '. . . . . .'
+    '. . . . . .'
+    'date-1 date-1 date-1 date-2 date-2 date-2'
+    'date-3 date-3 date-3 date-4 date-4 date-4'
+    'date-5 date-5 date-5 date-6 date-6 date-6';
 }
 main > div {
   padding: calc(var(--gapBase) * 2);
@@ -170,27 +177,27 @@ main > div {
 }
 .date-1 {
   grid-area: date-1;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
 }
 .date-2 {
   grid-area: date-2;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
 }
 .date-3 {
   grid-area: date-3;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
 }
 .date-4 {
   grid-area: date-4;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
 }
 .date-5 {
   grid-area: date-5;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
 }
 .date-6 {
   grid-area: date-6;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
 }
 /* Spinner */
 .spin {
