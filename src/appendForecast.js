@@ -55,7 +55,7 @@ async function weatherIcon(data, div) {
   const img = document.createElement('img');
   img.alt = icon;
   img.src = src.default;
-  img.style.height = '70%';
+  img.style.height = '60%';
 
   div.appendChild(img);
 }
@@ -110,6 +110,7 @@ async function dayLength(data, div) {
   sunriseSpan.appendChild(document.createTextNode(' ' + sunrise));
   div.appendChild(sunriseSpan);
 
+  div.appendChild(document.createElement('br'));
   div.appendChild(document.createElement('br'));
 
   const sunsetSpan = document.createElement('span');
@@ -256,6 +257,7 @@ async function future(futureData, div, index) {
   const src = await import(`./assets/weather_icons/${icon}.svg`);
   const img = document.createElement('img');
   img.style.height = '30%';
+  img.style.width = '30%';
   img.alt = icon;
   img.src = src.default;
   div.appendChild(img);
