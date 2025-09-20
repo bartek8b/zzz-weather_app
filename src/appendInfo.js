@@ -10,6 +10,7 @@ export function clearItems() {
 export function appendLoader() {
   gridItems.forEach((item) => {
     const img = document.createElement('img');
+    img.alt = 'loading data'
     img.src = loading;
     img.classList.add('spin');
     item.appendChild(img);
