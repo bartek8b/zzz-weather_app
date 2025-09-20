@@ -13,6 +13,7 @@ body {
   background: url(assets/background.png) no-repeat center center fixed;
   background-size: cover;
   cursor: default;
+  font-family: 'WorkSans', sans-serif;
 }
 body::selection {
   background-color: transparent;
@@ -25,6 +26,10 @@ body::selection {
 @font-face {
   font-family: 'mckloud';
   src: url(assets/mckloud.ttf);
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url(assets/WorkSans-Regular.ttf);
 }
 img{
   filter: invert(10%);
