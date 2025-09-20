@@ -29,7 +29,7 @@ body::selection {
 }
 @font-face {
   font-family: 'WorkSans';
-  src: url(assets/WorkSans-Regular.ttf);
+  src: url(assets/simply-sans.book.ttf);
 }
 img{
   filter: invert(10%);
@@ -174,11 +174,11 @@ main > div {
 }
 .day-length {
   grid-area: day-length;
-  aspect-ratio: 3 / 5;
+  aspect-ratio: 4 / 7;
 }
 .conditions {
   grid-area: conditions;
-  aspect-ratio: 3 / 5;
+  aspect-ratio: 4 / 7;
 }
 .date-1 {
   grid-area: date-1;
