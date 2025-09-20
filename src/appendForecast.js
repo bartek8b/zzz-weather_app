@@ -57,7 +57,8 @@ async function weatherIcon(data, div) {
   const img = document.createElement('img');
   img.alt = icon;
   img.src = src.default;
-  img.style.height = '60%';
+  img.style.height = '70%';
+  img.style.width = '70%';
 
   div.appendChild(img);
 }
