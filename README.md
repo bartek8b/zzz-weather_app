@@ -25,6 +25,7 @@
 - Saving the chosen units in local storage for user’s comfort
 - Appending forecast for future days from the fetched array automatically instead of hardcoding each day
 - Adding a loader while waiting for data to be fetched
+- Training usage of dynamic import
 
 ### 🧰 Tools and technologies
 
