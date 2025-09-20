@@ -6,6 +6,8 @@ const form = document.getElementById('form');
 const locationInput = document.getElementById('location');
 const searchBtn = document.getElementById('search-btn');
 
+let weatherData = null;
+
 async function getWeather(e) {
   e.preventDefault();
 
@@ -20,6 +22,7 @@ async function getWeather(e) {
     appendLoader();
     const weather = await fetchData(userInput);
     console.log(weather);
+    weatherData = weather;
     clearItems();
     appendForecast(weather);
     locationInput.value = '';
@@ -28,6 +31,10 @@ async function getWeather(e) {
     appendErrorInfo();
     console.error(error);
   }
+}
+
+export function getWeatherData() {
+  return weatherData;
 }
 
 export function searchListeners() {

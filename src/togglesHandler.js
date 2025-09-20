@@ -1,3 +1,7 @@
+import { getWeatherData } from './processData';
+import { appendForecast } from './appendForecast';
+import { clearItems } from './appendInfo';
+
 const tempUnit = document.getElementById('temp-unit-toggle-box');
 const windUnit = document.getElementById('wind-unit-toggle-box');
 
@@ -20,12 +24,17 @@ export function retrieveStorage() {
   windUnit.checked = storedUnits.wind;
 }
 
-export function togglesListeners() {
-  tempUnit.addEventListener('click', () => {
-    setStorage();
-  });
+function updateUnits() {
+  setStorage();
+  const data = getWeatherData();
+  if (data) {
+    clearItems();
+    appendForecast(data);
+  }
+}
 
-  windUnit.addEventListener('click', () => {
-    setStorage();
-  });
+export function togglesListeners() {
+  tempUnit.addEventListener('click', updateUnits);
+
+  windUnit.addEventListener('click', updateUnits);
 }
