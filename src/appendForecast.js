@@ -230,6 +230,8 @@ async function conditions(data, div) {
 
 async function future(futureData, div, index) {
   // Get data from weather.future array
+
+  //Day
   const date = new Date(futureData[index].day);
   const days = [
     'Sunday',
@@ -248,6 +250,7 @@ async function future(futureData, div, index) {
   div.appendChild(document.createElement('br'));
   div.appendChild(document.createElement('br'));
 
+  // Weather icon
   const weatherIcon = futureData[index].icon;
   const weatherIconSrc = await import(
     `./assets/weather_icons/${weatherIcon}.svg`
@@ -261,6 +264,7 @@ async function future(futureData, div, index) {
 
   div.appendChild(document.createElement('br'));
 
+  // Temperature
   const tempSpan = document.createElement('span');
   div.appendChild(tempSpan);
   const tempIcon = document.createElement('img');
@@ -275,6 +279,7 @@ async function future(futureData, div, index) {
 
   div.appendChild(document.createElement('br'));
 
+  // Wind
   const windSpan = document.createElement('span');
   div.appendChild(windSpan);
   const windIcon = document.createElement('img');
