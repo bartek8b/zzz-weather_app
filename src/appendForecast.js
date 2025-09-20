@@ -1,4 +1,6 @@
 const divs = document.querySelectorAll('main > div');
+const tempUnitToggle = document.getElementById('temp-unit-toggle-box');
+const windUnitToggle = document.getElementById('wind-unit-toggle-box');
 
 export function appendForecast(data) {
   divs.forEach((div) => {
@@ -146,9 +148,6 @@ function getDayLength(minutes) {
 }
 
 async function conditions(data, div) {
-  const tempUnitToggle = document.getElementById('temp-unit-toggle-box');
-  const windUnitToggle = document.getElementById('wind-unit-toggle-box');
-
   // Temperatue
   const tempSpan = document.createElement('span');
   div.appendChild(tempSpan);
@@ -159,11 +158,9 @@ async function conditions(data, div) {
   tempSpan.appendChild(tempIcon);
   tempSpan.appendChild(document.createElement('br'));
   const tempValue = document.createElement('span');
-  tempValue.classList.add('temp-value');
   // Fill based on toggle state
   tempSpan.appendChild(tempValue);
   const tempUnit = document.createElement('span');
-  tempUnit.classList.add('temp-unit');
   // Fill based on toggle state
   tempSpan.appendChild(tempUnit);
 
@@ -179,11 +176,9 @@ async function conditions(data, div) {
   windSpan.appendChild(windIcon);
   windSpan.appendChild(document.createElement('br'));
   const windValue = document.createElement('span');
-  windValue.classList.add('wind-value');
   // Fill based on toggle state
   windSpan.appendChild(windValue);
   const windUnit = document.createElement('span');
-  windUnit.classList.add('wind-unit');
   // Fill based on toggle state
   windSpan.appendChild(windUnit);
 
@@ -253,16 +248,59 @@ async function future(futureData, div, index) {
   div.appendChild(document.createElement('br'));
   div.appendChild(document.createElement('br'));
 
-  const icon = futureData[index].icon;
-  const src = await import(`./assets/weather_icons/${icon}.svg`);
+  const weatherIcon = futureData[index].icon;
+  const weatherIconSrc = await import(
+    `./assets/weather_icons/${weatherIcon}.svg`
+  );
   const img = document.createElement('img');
-  img.style.height = '30%';
-  img.style.width = '30%';
-  img.alt = icon;
-  img.src = src.default;
+  img.style.height = '20%';
+  img.style.width = '20%';
+  img.alt = weatherIcon;
+  img.src = weatherIconSrc.default;
   div.appendChild(img);
 
   div.appendChild(document.createElement('br'));
 
+  const tempSpan = document.createElement('span');
+  div.appendChild(tempSpan);
+  const tempIcon = document.createElement('img');
+  const tempIconScr = await import('./assets/info_icons/thermometer.svg');
+  tempIcon.alt = 'temperature';
+  tempIcon.src = tempIconScr.default;
+  tempSpan.appendChild(tempIcon);
+  const tempValue = document.createElement('span');
+  tempSpan.appendChild(tempValue);
+  const tempUnit = document.createElement('span');
+  tempSpan.appendChild(tempUnit);
 
+  div.appendChild(document.createElement('br'));
+
+  const windSpan = document.createElement('span');
+  div.appendChild(windSpan);
+  const windIcon = document.createElement('img');
+  const windIconScr = await import('./assets/info_icons/wind_speed.svg');
+  windIcon.alt = 'wind speed';
+  windIcon.src = windIconScr.default;
+  windSpan.appendChild(windIcon);
+  const windValue = document.createElement('span');
+  windSpan.appendChild(windValue);
+  const windUnit = document.createElement('span');
+  windSpan.appendChild(windUnit);
+
+  // Checking toggle state
+  if (!tempUnitToggle.checked) {
+    tempValue.textContent = ' ' + Math.round(futureData[index].temperature);
+    tempUnit.textContent = ' °C';
+  } else if (tempUnitToggle.checked) {
+    tempValue.textContent = ' ' + Math.round((futureData[index].temperature * 9) / 5 + 32);
+    tempUnit.textContent = ' °F';
+  }
+
+  if (!windUnitToggle.checked) {
+    windValue.textContent = ' ' + Math.round(futureData[index].wind);
+    windUnit.textContent = ' km/h';
+  } else if (windUnitToggle.checked) {
+    windValue.textContent = ' ' + Math.round(futureData[index].wind * 0.621371);
+    windUnit.textContent = ' mph';
+  }
 }
