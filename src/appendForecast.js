@@ -55,7 +55,7 @@ async function weatherIcon(data, div) {
   const img = document.createElement('img');
   img.alt = icon;
   img.src = src.default;
-  img.style.width = '70%';
+  img.style.height = '70%';
 
   div.appendChild(img);
 }
@@ -255,12 +255,12 @@ async function future(futureData, div, index) {
   const icon = futureData[index].icon;
   const src = await import(`./assets/weather_icons/${icon}.svg`);
   const img = document.createElement('img');
-  img.style.width = '30%';
+  img.style.height = '30%';
   img.alt = icon;
   img.src = src.default;
   div.appendChild(img);
 
   div.appendChild(document.createElement('br'));
 
-  
+
 }
