@@ -7,13 +7,9 @@ function appendWelcome() {
   const input = document.getElementById('location');
 
   divs.forEach((div) => {
-    if (div.classList.contains('address')) {
-      div.textContent = 'Enter location to fetch forecast';
-    } else {
-      const img = document.createElement('img');
-      img.src = loading;
-      div.appendChild(img);
-    }
+    const img = document.createElement('img');
+    img.src = loading;
+    div.appendChild(img);
   });
 
   input.focus();
